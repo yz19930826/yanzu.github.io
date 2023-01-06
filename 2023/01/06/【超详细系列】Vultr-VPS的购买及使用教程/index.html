@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="刁民本民">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、概要本文以大白话的角度讲解了VPS的概念、Vultr服务器的购买和使用，即使你没有太多的计算机基础，也可以轻松的看懂本文。 其内容包括:  什么是VPS？ 为什么选择Vultr？ 如何选择Vultr的优惠以实现利益最大化？ Vultr VPS的注册、登录、购买教程 如何选择Vultr VPS的服务器位置以实现高速网上冲浪？ 如何确定购买的Vultr VPS是可用的？ 如何优雅的连接Vultr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【超详细系列】Vultr VPS的购买及使用教程">
+<meta property="og:url" content="http://example.com/2023/01/06/%E3%80%90%E8%B6%85%E8%AF%A6%E7%BB%86%E7%B3%BB%E5%88%97%E3%80%91Vultr-VPS%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="吾乃刁民">
+<meta property="og:description" content="一、概要本文以大白话的角度讲解了VPS的概念、Vultr服务器的购买和使用，即使你没有太多的计算机基础，也可以轻松的看懂本文。 其内容包括:  什么是VPS？ 为什么选择Vultr？ 如何选择Vultr的优惠以实现利益最大化？ Vultr VPS的注册、登录、购买教程 如何选择Vultr VPS的服务器位置以实现高速网上冲浪？ 如何确定购买的Vultr VPS是可用的？ 如何优雅的连接Vultr">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/75c23f3f9aa54a2739eaa1080e6e6550.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7a6a537d9c03d1b717134005de3adced.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/46e0383944922e811a74c0f8e1983669.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a5e07bf9201d0ccc61612c62f38bd7f7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/543f16fb26d2d2010a4a22423df8814b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2a5f99419d0ac362fe90e8220cecb62c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/9b6a7938ee167dc3a827145ada83ffbd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/80d6f0d1ded7246eba32bcad91eda5fc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/39911accbf1b0c10afd501d4f9ad3b41.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/36020fbe8c941903e7e0b46448a51887.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/01779990ad034e37cd25474a09847364.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/b4e0826574bef1397cc454eb1ed969e2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/f4b35fa559cdeb3dd547669ec5c809a1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a89a6504d89688352640bb2b885263e6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/029ee59934df7d5c22af3cceef0a5f49.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bbc39e0d779a0b089190a38b5f77a2ce.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/f93df7da274ebdf72cef7fed3f27e400.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/827beb39c82adc8fca47f23beabdbd5d.gif">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/03c066a13f860ca404c0289a26724298.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a2751865222de80e1d2ea3b0bee5f829.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/1637f84b84fff4c98539d9ab64bc90dc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/69c1db68b6e74e7850e19d7bf8fb482f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/9584f39750bb21d7883aa7ba6e064d35.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2c6a0b49ecbae1f24ea8af82c8fa2e98.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7f677d356f4b5aeade7c942fc25d9e3a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/d9bb7a5198998fd73733c2ce846b8495.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/084192237ed3ee188297d4a8d20cc7ea.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/fb37794a971632748695ad75749ec746.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2de366898f4aeedc48b1504051ee3a45.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a50e836fd5bfd8ce8d350ab14fbabb1d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/62d6e7214a9eaf8ebbe35d9a7ed08ed4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/f6fee7d860d9328fd2d3d7ffa6f27b95.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/e2fee85991a12e42ea4f86a28b7468db.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/fb05b27c689f2378876be97be7eb4488.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ef18607c3d30d65b95732083345b5270.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/6cb354bee1d0c1f3eda61faf77d1e6a0.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/263047381d1190602892790d052bb388.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2c94bcc33c1e0798187bf37c29d34afb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7f78eb78f6c8890765a1634f5c33c205.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/c5a7c605b05e913ec864ce0baeffa29e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/219ea4239f10f84bf060dd79836ebae1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/3033cfcb9488303360e2acd6f39ffd78.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/dd00425cf893618e2f1303872365f148.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/36320df58cf09b022bc723dbb1459b19.png">
+<meta property="article:published_time" content="2023-01-06T14:47:21.000Z">
+<meta property="article:modified_time" content="2023-01-06T14:49:46.849Z">
+<meta property="article:author" content="刁民本民">
+<meta property="article:tag" content="vultr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/75c23f3f9aa54a2739eaa1080e6e6550.png">
+  
+  
+  
+  <title>【超详细系列】Vultr VPS的购买及使用教程 - 吾乃刁民</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>吾乃刁民</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【超详细系列】Vultr VPS的购买及使用教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-06 22:47" pubdate>
+          2023年1月6日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          39 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【超详细系列】Vultr VPS的购买及使用教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一、概要"><a href="#一、概要" class="headerlink" title="一、概要"></a>一、概要</h1><p>本文以大白话的角度讲解了VPS的概念、Vultr服务器的购买和使用，即使你没有太多的计算机基础，也可以轻松的看懂本文。</p>
+<p>其内容包括:</p>
+<ol>
+<li>什么是VPS？</li>
+<li>为什么选择Vultr？</li>
+<li>如何选择Vultr的优惠以实现利益最大化？</li>
+<li>Vultr VPS的注册、登录、购买教程</li>
+<li>如何选择Vultr VPS的服务器位置以实现高速网上冲浪？</li>
+<li>如何确定购买的Vultr VPS是可用的？</li>
+<li>如何优雅的连接Vultr VPS？</li>
+<li>Vultr VPS的使用概要（包含但不限于如何搭建博客，网盘，实现自己的自由冲浪等等）</li>
+</ol>
+<p>上述内容的每一步比较难以理解的点都以图文的方式来展示，让来看文章的你，知其然并知其所以然~</p>
+<p>那么下面好戏开场</p>
+<h1 id="二、什么是VPS"><a href="#二、什么是VPS" class="headerlink" title="二、什么是VPS"></a>二、什么是VPS</h1><p>在百度百科上，对VPS的描述是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/5613529">虚拟专用服务器</a>，这个名词相当的抽象，令人丈二的和尚摸不着头脑。</p>
+<p>透过现象看本质，实际上我们可以理解VPS就是一个远程的电脑，和你家用玩LOL的电脑无异，你可以使用家用的电脑去操作这个远程的电脑让它做点有意思的事情。<br><img src="https://img-blog.csdnimg.cn/img_convert/75c23f3f9aa54a2739eaa1080e6e6550.png" srcset="/img/loading.gif" lazyload alt="你懂得.png"></p>
+<p>大家可能会问，既然都是电脑，我可以使用家里的电脑来代替VPS吗？省下来的的钱买点猪肉吃不香吗？</p>
+<p>理论上可行的，但是实际上有一些因素限制，甚至于让你吃不上猪肉还得倒贴些买牛肉的钱</p>
+<p>比如：</p>
+<ol>
+<li><p>VPS可以24小时的运行，而无需付电费，只需要使用费，也没有设备折损费（电费和折损费加起来，啧啧啧~）</p>
+</li>
+<li><p>VPS有公网IP地址，而我们大部分连的家用宽带是没有公网IP的。什么是公网IP地址？我们记住<strong>任何概念基本都是现实世界的抽象</strong>，<strong>IP地址和邮政地址无异</strong>，只有填写了正确的邮政地址，快递员才能找到你，你的快递包裹才能正确的收到。同理在计算机上，有个独立的公网IP地址，别人才能找到你~</p>
+</li>
+<li><p>另外最重要的一点是，它可以做一些你的计算机无法做到的事情，比如访问Google，当然。你也可以肉身转移到国外去访问，这也是一个不错的思路，只是机票有点儿费钱。</p>
+</li>
+</ol>
+<h1 id="三、为什么选择Vultr？"><a href="#三、为什么选择Vultr？" class="headerlink" title="三、为什么选择Vultr？"></a>三、为什么选择Vultr？</h1><p>为什么在茫茫VPS厂商中选中了Vultr VPS呢，当然是Vultr比较优秀喽</p>
+<p>从付费方式上来讲，<strong>Vultr按小时付费 ，随用随开，不用即停</strong>，没有其余费用，也就是说在我们在需要使用VPS的时候创建一个，不需要使用的时候直接销毁即可，也不会有额外的支出。</p>
+<p>支付方式上，它支持支付宝付款，支付宝大家基本都有吧。。</p>
+<p>支持免费快照功能，一次搭建，到处运行。如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/7a6a537d9c03d1b717134005de3adced.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>若VPS-1因为某些特殊的原因无法访问了，那么我们我可以把VPS-1当前运行的环境做一个快照恢复至VPS-2，这样VPS-2就完全复制了VPS-1的运行环境，而不需要把所有的数据啊软件啊都重新安装搭建一遍，相当方便。</p>
+<p>支持换IP地址，而且是免费的，这个重要性就不言而喻了，因为某些原因导致此IP无法访问，那么我们可以重新换个IP，至于什么原因导致IP无法访问，你懂得<br><img src="https://img-blog.csdnimg.cn/img_convert/46e0383944922e811a74c0f8e1983669.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>无需备案，备案这个事情实属国内的特色，意思就是你购买的域名如果想指向这个VPS的IP，需要向有关部门说明下你拿来干啥的，而购买国外的VPS则不需要这个操作，而Vultr就是国外的VPS。</p>
+<p>免费IPV6地址。之前说的IP地址都是IPV4的地址，Vultr同样支持IPV6地址，而且是免费的。那IPV4和IPV6到底是什么鬼，它们之间有什么关系？这东西概念一套一套的，忽略一些细节，我们只要知道IPV6地址比IPV4的更长就行了，目前IPV4的地址快不够用了，所以又搞了个升级版IPV6，其更大，更长，更…，别想歪了啊。</p>
+<p>据说IPV6可以把地球上的每粒沙子都给个地址编码，实属牛批，万物互联首选，现在国家更在大力推行IPV6，我们的运营商网络很大一部分已经支持IPV6了，说了这么多，对我们的好处是什么？一句话，IPV4和IPV6是独立的，如果IPV4地址我们访问不了，可以试试IPV6访问，多个路，多个选择嘛。具体IPV6的使用方法我会在后文详细介绍</p>
+<h1 id="四、如何优惠的购买Vultr，以实现利益最大化？"><a href="#四、如何优惠的购买Vultr，以实现利益最大化？" class="headerlink" title="四、如何优惠的购买Vultr，以实现利益最大化？"></a>四、如何优惠的购买Vultr，以实现利益最大化？</h1><p>Vultr对新用户是有优惠政策，经过调研，较优的方案有两种：</p>
+<ol>
+<li><p>充多少送多少的活动，最高送100美刀，送的美刀有效期是1年 <a target="_blank" rel="noopener" href="https://www.vultr.com/zh/match/?ref=7295935">&#x3D;&#x3D;&gt;点此链接注册Vultr享受充值多少送多少的优惠</a></p>
+</li>
+<li><p>充10送100美刀的活动，但是赠送的美刀有效期只有14天 <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=9180669-8H">&#x3D;&#x3D;&gt;点此链接注册Vultr享受充10送100$的优惠</a></p>
+</li>
+</ol>
+<p>优惠摆在这儿了，如果想长期使用，可以选择第一种方案。如果想爽一把，直接上高配置机器，则可以选择第二种方案，大家按需选择。</p>
+<h1 id="五、Vultr的注册、登录与优惠确认"><a href="#五、Vultr的注册、登录与优惠确认" class="headerlink" title="五、Vultr的注册、登录与优惠确认"></a>五、Vultr的注册、登录与优惠确认</h1><p>正戏开场，由于Vultr是国外的服务器厂商，网站也是全英文的，下面以图文的方式介绍Vultr的注册与登录</p>
+<h2 id="5-1-Vultr的注册"><a href="#5-1-Vultr的注册" class="headerlink" title="5.1 Vultr的注册"></a>5.1 Vultr的注册</h2><p>选择适合自己的优惠，点击后面的链接进入到网站</p>
+<p>优惠一：<a target="_blank" rel="noopener" href="https://www.vultr.com/zh/match/?ref=7295935">Vultr VPS充值多少送多少活动页面</a><br>优惠二：<a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=9180669-8H">Vultr VPS充值10送100活动页面</a></p>
+<p>进入之后网站可能会验证访问者是不是人类，会让选择公交车或者轮船，正常选择就行，如果选择错了也没关系，会让你重新选择。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/a5e07bf9201d0ccc61612c62f38bd7f7.png" srcset="/img/loading.gif" lazyload alt="确认自己是人类"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/543f16fb26d2d2010a4a22423df8814b.png" srcset="/img/loading.gif" lazyload alt="证明自己是人类"></p>
+<p>验证通过之后会进入到Vultr网站的首页，如下图，直接输入邮箱和密码点击创建账户（Create Account）即可</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/2a5f99419d0ac362fe90e8220cecb62c.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>这里需要注意的是，密码的规则有四个，必须同时满足才算是一个有效的密码，即</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 必须有一个大写字母<br><span class="hljs-bullet">2.</span> 必须有一个小写字母<br><span class="hljs-bullet">3.</span> 必须有一个数字<br><span class="hljs-bullet">4.</span> 不少于10个字符<br></code></pre></td></tr></table></figure>
+<h2 id="5-2-Vultr服务器的登录"><a href="#5-2-Vultr服务器的登录" class="headerlink" title="5.2 Vultr服务器的登录"></a>5.2 Vultr服务器的登录</h2><p>创建账户完成后会直接跳转到Billing标签页，即已经是登录状态。如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/9b6a7938ee167dc3a827145ada83ffbd.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>如果没有登录的话，可以点击右边这个链接输入账号密码进行进行登录 👉🏻<a target="_blank" rel="noopener" href="https://my.vultr.com/?ref=7295935">点我进入Vultr登录页</a></p>
+<h2 id="5-3-Vultr的优惠确认与充值"><a href="#5-3-Vultr的优惠确认与充值" class="headerlink" title="5.3 Vultr的优惠确认与充值"></a>5.3 Vultr的优惠确认与充值</h2><p>既然我们是通过优惠专享链接注册的，那么必然要确认下优惠是否已经下发，如下图，按照标记的步骤确认即可<br><img src="https://img-blog.csdnimg.cn/img_convert/80d6f0d1ded7246eba32bcad91eda5fc.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接着会跳转到支付宝的付款页面上，扫码付款即可</p>
+<p>付款成功后美元即到账<br><img src="https://img-blog.csdnimg.cn/img_convert/39911accbf1b0c10afd501d4f9ad3b41.png" srcset="/img/loading.gif" lazyload alt="美元到账图"></p>
+<h2 id="5-4-邮箱验证"><a href="#5-4-邮箱验证" class="headerlink" title="5.4 邮箱验证"></a>5.4 邮箱验证</h2><p>接下来需要验证下邮箱，点击<code>Click here to send a verfication e-mail</code>，如下图<br><img src="https://img-blog.csdnimg.cn/img_convert/36020fbe8c941903e7e0b46448a51887.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接着到邮箱里面，打开Vultr官方发来的链接，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/01779990ad034e37cd25474a09847364.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>打开链接后会直接跳转到Vultr官网，并显示验证成功，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/b4e0826574bef1397cc454eb1ed969e2.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h1 id="六、Vultr的服务器的购买"><a href="#六、Vultr的服务器的购买" class="headerlink" title="六、Vultr的服务器的购买"></a>六、Vultr的服务器的购买</h1><p>充值完成和验证完成后即可选择适合自己的VPS机器了，点击<code>Products</code>-&gt; <code>+</code>号，如下图<br><img src="https://img-blog.csdnimg.cn/img_convert/f4b35fa559cdeb3dd547669ec5c809a1.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>VPS主要分了四个类别，我在图中都有标记，大家按需选择，博主比较穷，选择【一般性能的VPS】就行，贫穷限制了我在网上自由冲浪的权利😭<br><img src="https://img-blog.csdnimg.cn/img_convert/a89a6504d89688352640bb2b885263e6.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><strong>接着选择VPS的CPU和存储</strong>，如下图，我依然贴心的介绍了一下，大家按需选择~<br><img src="https://img-blog.csdnimg.cn/img_convert/029ee59934df7d5c22af3cceef0a5f49.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接下来是选择VPS的位置，也就是你要买的VPS，它是来自遥远的阿姆斯特丹，还是纽约，完全取决于你的选择。大家可能选择恐惧症犯了，这么多位置，该选择哪个呢？这里博主当然会给大家一个标准，选择最适合自己的VPS</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/bbc39e0d779a0b089190a38b5f77a2ce.png" srcset="/img/loading.gif" lazyload alt="Vultr VPS位置选择"></p>
+<p>那么先来聊聊，选择的标准是什么？这里有两个参数需要介绍下，那就是延迟和带宽</p>
+<p><strong>什么是延迟？</strong> 简单来说就是从我们的电脑访问到VPS一个来回所经历的时间，博主当然不会用这么抽象的话来表示延迟的含义，下面让周星星登场来解释下</p>
+<p>想当年周星星对柏芝说出经典的一句台词：“我养你啊”，柏芝回复说：“你先养好自己吧，傻瓜”，延迟就是从周星星说出“我养你啊”，到耳朵听到“你先养好你自己吧，傻瓜”这句话所经历的时间，周星星期待尽快得到回复，因此延迟越小越好<br><img src="https://img-blog.csdnimg.cn/img_convert/f93df7da274ebdf72cef7fed3f27e400.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>又比如我们打英雄联盟游戏，右上角都会显示一个ping值，这个值越低，我们操作越顺滑，这个值越高，就越想砸键盘。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/827beb39c82adc8fca47f23beabdbd5d.gif" srcset="/img/loading.gif" lazyload></p>
+<p>什么是带宽呢？即单位时间内通过的数据量，简单来说，在我们下载动作小视频的时候，都会显示一个下载的速度，这个速度就可以理解为带宽，很明显，这个值越大越好，在SpeedTest可以测试我们当前使用的宽带的网速，网址如下：<a target="_blank" rel="noopener" href="https://www.speedtest.cn/">-&gt;https://www.speedtest.cn/</a></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/03c066a13f860ca404c0289a26724298.png" srcset="/img/loading.gif" lazyload alt="网速测试"></p>
+<p>介绍完了延迟和带宽的概念，并且知道了要选择延迟小的和带宽大的VPS，下面就是验证不同位置的VPS的延迟和带宽的区别，这里Vultr给出了官方的测试地址：<a target="_blank" rel="noopener" href="https://www.vultr.com/zh/resources/faq/#downloadspeedtests">→Vultr VPS不同位置延迟和带宽测评地址</a>，点开如下图<br><img src="https://img-blog.csdnimg.cn/img_convert/a2751865222de80e1d2ea3b0bee5f829.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>如上图，标出了<strong>位置</strong>、<strong>测试延迟</strong>和<strong>测试带宽</strong>的三个点，我们可以选择不同的位置进行延迟和带宽测试，对于<strong>测试延迟</strong>，可以在<code>CMD</code>窗口使用<code>ping</code>命令测试，即<code>ping mad-es-ping.vultr.com</code>，结果如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/1637f84b84fff4c98539d9ab64bc90dc.png" srcset="/img/loading.gif" lazyload alt="Vultr VPS延迟测试"></p>
+<p>对于带宽的测试，我们直接点击页面上的100M，会直接触发下载操作，观察下载的速度即可，如下图</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/69c1db68b6e74e7850e19d7bf8fb482f.png" srcset="/img/loading.gif" lazyload alt="带宽测试"></p>
+<p>经过一顿操作猛如虎的设计，博主我选到了最合适的位置，那就是新加坡！,延迟只有125ms左右，稳得一批</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/9584f39750bb21d7883aa7ba6e064d35.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>那么接下来继续部署咱们得VPS，选择新加坡位置，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/2c6a0b49ecbae1f24ea8af82c8fa2e98.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><strong>选择操作系统</strong>，咱们选择<code>CentOS 8 Stream X64</code>，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/7f677d356f4b5aeade7c942fc25d9e3a.png" srcset="/img/loading.gif" lazyload alt="Vultr操作系统"></p>
+<p><strong>选择硬盘容量和CPU核数</strong>等配置，明码标价，按需选择，按照博主的作风，那肯定选择了最具有性价比的（最便宜的，哈哈）</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/d9bb7a5198998fd73733c2ce846b8495.png" srcset="/img/loading.gif" lazyload alt="配置图"></p>
+<p><strong>自动备份选择</strong> ，类似于手机的自动备份机制，可以自动备份VPS的数据，如遇到问题，可以快速恢复，这个也是按需选择<br><img src="https://img-blog.csdnimg.cn/img_convert/084192237ed3ee188297d4a8d20cc7ea.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><strong>其它VPS特性</strong>选择，这里主要勾选的是IPV6，后续有用，主要还是免费的，哈哈</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/fb37794a971632748695ad75749ec746.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接下来的两项配置走默认，无需配置，如下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/2de366898f4aeedc48b1504051ee3a45.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>终于到了激动人性的时刻，我们马上就会拥有属于自己的VPS，点击Deploy Now<br><img src="https://img-blog.csdnimg.cn/img_convert/a50e836fd5bfd8ce8d350ab14fbabb1d.png" srcset="/img/loading.gif" lazyload alt="Deply Now"></p>
+<p>VPS安装中<br><img src="https://img-blog.csdnimg.cn/img_convert/62d6e7214a9eaf8ebbe35d9a7ed08ed4.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>VPS安装完成，运行中<br><img src="https://img-blog.csdnimg.cn/img_convert/f6fee7d860d9328fd2d3d7ffa6f27b95.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h1 id="七、VPS的可访问性确认"><a href="#七、VPS的可访问性确认" class="headerlink" title="七、VPS的可访问性确认"></a>七、VPS的可访问性确认</h1><p>VPS虽然创建好了，但有比较小的几率访问不通，所以需要确认，确认的方式就是利用ping命令的方式，流程细节如下：</p>
+<p>点击<code>...</code>，打开VPS操作面板，有VPS详情、VPS重启、VPS销毁等操作，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/e2fee85991a12e42ea4f86a28b7468db.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>点击<code>Server Detail</code>，展示了VPS的信息详情，具体介绍如下图:<br><img src="https://img-blog.csdnimg.cn/img_convert/fb05b27c689f2378876be97be7eb4488.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>复制IPV4地址，打开CMD窗口，执行命令，我申请的VPS IP是：<code>45.76.180.255</code>，则命令是<code>ping 45.76.180.255</code>，结果如下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/ef18607c3d30d65b95732083345b5270.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>如若访问不通，则需要将该VPS销毁重建，IP会自动改变</p>
+<h1 id="八、优雅的连接Vultr-VPS"><a href="#八、优雅的连接Vultr-VPS" class="headerlink" title="八、优雅的连接Vultr VPS"></a>八、优雅的连接Vultr VPS</h1><p>网上很多文章采用的都是Xshell或者Putty来连接VPS，而博主不一样，博主有完美强迫症，用的工具好用还得好看才行，于是找啊找，找到一个集功能与颜值于一身的VPS连接软件，关键还<strong>开源免费</strong>呢~<br><img src="https://img-blog.csdnimg.cn/img_convert/6cb354bee1d0c1f3eda61faf77d1e6a0.png" srcset="/img/loading.gif" lazyload alt="Tabby启动图"></p>
+<p>官方网站：<a target="_blank" rel="noopener" href="https://tabby.sh/">Tabby</a></p>
+<p>鉴于小伙伴们访问Github的速度可能比较慢，我在这里贴出来了MacOS和Windows的下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://share.weiyun.com/x0eMqqi7">Tabby Windows X64下载</a></p>
+<p><a target="_blank" rel="noopener" href="https://share.weiyun.com/HxZhHG8d">Tabby Mac OS下载</a></p>
+<p>不是上述版本的小伙伴，下面是官方全部版本的下载地址：<a target="_blank" rel="noopener" href="https://github.com/Eugeny/tabby/releases/tag/v1.0.183">Tabby 官方全部版本下载页</a></p>
+<p>下载安装完成后，打开后会进入设置界面，语言选择中文简体，其它默认即可，然后点击<code>Close and nerver show ageain</code>，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/263047381d1190602892790d052bb388.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接着点击<code>设置</code>，如下图<br><img src="https://img-blog.csdnimg.cn/img_convert/2c94bcc33c1e0798187bf37c29d34afb.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>选择<code>配置和连接</code>-&gt; <code>新配置</code>，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/7f78eb78f6c8890765a1634f5c33c205.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>选择SSH连接，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/c5a7c605b05e913ec864ce0baeffa29e.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>配置Vultr VPS的SSH，配置完成后点保存，如下图：<br><img src="https://img-blog.csdnimg.cn/img_convert/219ea4239f10f84bf060dd79836ebae1.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接着启动连接VPS，如下图:<br><img src="https://img-blog.csdnimg.cn/img_convert/3033cfcb9488303360e2acd6f39ffd78.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>接着会弹出来框【主机密钥校验】，选择【接受并记住密钥】，如下图<br><img src="https://img-blog.csdnimg.cn/img_convert/dd00425cf893618e2f1303872365f148.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>登录成功，见下图<br><img src="https://img-blog.csdnimg.cn/img_convert/36320df58cf09b022bc723dbb1459b19.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h1 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h1><p>为了保证教程的可行性，博主的教程都是实操。并且在做的过程会考虑一些不好理解的点，利用现实生活中的例子去阐述它，让小伙伴们知其然并知其所以然。</p>
+<p>后续会陆续开放VPS实战篇【超详细系列 - 利用VPS搭建个人博客】、【超详细系列 - 利用VPS搭建个人网盘，自由自在存储小视频】<br>以及【超详细系列 - 利用VPS搭建自己的私有请求链】</p>
+<p>若文章中有错误或者不好理解的地方，希望小伙伴们在下面留言，我看到后会及时改正，让我们一起维护【超详细系列】吧 ~</p>
+<p>最后觉得文章还不错的话，帮忙点个赞哦~</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vultr/">#vultr</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【超详细系列】Vultr VPS的购买及使用教程</div>
+      <div>http://example.com/2023/01/06/【超详细系列】Vultr-VPS的购买及使用教程/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>刁民本民</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月6日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/02/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo.diaomin.club","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
